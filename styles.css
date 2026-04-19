@@ -9,16 +9,21 @@ body{
     min-height: 100vh; /* 화면 전체를 내용으로 설정 */
 }
 
+
+
 body *{
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     color: #0A400C;
 }
+
+
 
 header {
     background-color: #B1AB86;
     margin-top: 0;
     margin-bottom: 0;
 }
+
 
 footer{
     background-color: #B1AB86;
@@ -31,6 +36,8 @@ footer{
 footer * {
     color: white;
 }
+
+
 
 nav ul{
     display : flex;
@@ -58,10 +65,10 @@ nav a:hover{
     background-color : #819067;
 }
 
+
 .title {
     margin-top : 0px ;
     text-align: center;
-    /* color: #0A400C; */
     padding: 1% ;
     font-family :Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     letter-spacing: 0.1em;
@@ -95,7 +102,6 @@ nav a:hover{
 #contact-form *{
     margin-left: 20px;
     margin-right: 20px;
-    /* color: #0A400C; */
 
 }
 
@@ -137,7 +143,6 @@ input[type="submit"]:hover{
     border-radius: 50%;
     max-width: 50%;
     height: auto;
-    box-shadow: 0 0 10px #819067;
 }
 
 #home-main{
@@ -159,9 +164,6 @@ input[type="submit"]:hover{
     text-align: center;
 }
 
-/* #home-main li, #home-main ul, #home-main h1, #home-main h2{
-    color: #0A400C;
-} */
 
 
 /*projects*/
@@ -179,9 +181,7 @@ input[type="submit"]:hover{
     margin: 20px;
 }
 
-/* #projects-main a, #projects-main h1, #projects-main p{
-    color: #0A400C;
-} */
+
 
 #projects-main a{
     text-decoration: none;
@@ -202,10 +202,44 @@ input[type="submit"]:hover{
     margin: 20px;
 }
 
-/* #skills-main li, #skills-main h1{
-    color: #0A400C;
-} */
 
+
+
+
+/* nightTheme */
+
+body[class="nightTheme"]{
+    background-color: #25205b;
+}
+
+main.nightTheme *{
+    color: #fff574;
+    border-color: #fcf6a2 !important ;
+}
+
+header.nightTheme *, header.nightTheme, footer.nightTheme{
+    background-color: #040c42;
+}
+
+header.nightTheme h1{
+    color : #ffd739 ;
+}
+
+
+header.nightTheme nav a:hover{
+    background-color : #fff574;
+    color :#25205b ;
+}
+
+main.nightTheme input[type="submit"]{
+    background-color: #040c42;
+}
+
+main.nightTheme input[type="submit"]:hover{
+    color: #040c42;
+    background-color: #fcf6a2;
+    box-shadow:0 0 10px #ffd739;
+}
 
 /*media query*/
 
