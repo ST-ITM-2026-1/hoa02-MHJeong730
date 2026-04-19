@@ -1,0 +1,227 @@
+/*모든 문서에 공통적으로 적용되는 영역을 다룹니다.*/
+/*styles for all 4 files*/
+
+body{
+    background-color: #FEFAE0;
+    margin: 0px;
+    display :flex;
+    flex-direction: column;
+    min-height: 100vh; /* 화면 전체를 내용으로 설정 */
+}
+
+body *{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+header {
+    background-color: #B1AB86;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+footer{
+    background-color: #B1AB86;
+    margin-bottom: 0;
+    text-align: center;
+    padding: 1%;
+}
+
+
+footer * {
+    color: white;
+}
+
+nav ul{
+    display : flex;
+    justify-content: center;
+    padding-left: 0; /*ul에 있는 기본 좌측 패딩을 없애기 위함*/
+}
+
+nav ul li {
+    list-style: none; /*리스트의 좌측에 있는 점 없앰*/
+    text-align: center;
+    flex: 1;
+}
+
+nav a{
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    padding: 10px ;
+    display: block;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+}
+
+nav a:hover{
+    background-color : #819067;
+}
+
+.title {
+    margin-top : 0px ;
+    text-align: center;
+    color: #0A400C;
+    padding: 1% ;
+    font-family :Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    letter-spacing: 0.1em;
+
+}
+
+
+
+/*Contact 파일에 적용되는 영역을 다룹니다.*/
+/*styles for contact.html file*/
+
+.blank:focus{
+    outline: none;
+    box-shadow: 0 0 3px #819067;
+}
+
+#contact-form{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    flex: 0 1 30%;
+
+    border-width: 5px 0px;
+    border-style: double;
+    border-color: #819067;
+
+    margin: 2%;
+
+}
+
+#contact-form *{
+    margin-left: 20px;
+    margin-right: 20px;
+    color: #0A400C;
+
+}
+
+#contact-form p, #contact-form h3{
+    text-align: center;    
+}
+
+#contact-form h3{
+    margin-top: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    
+}
+
+input[type="submit"]{
+    background-color: #B1AB86;
+    border: none;
+    padding: 5px;
+    border-radius: 20px;
+    margin: 10px;
+    margin-bottom: 50px;
+}
+
+input[type="submit"]:hover{
+    background-color: #819067;
+    box-shadow:0 0 10px #B1AB86;
+}
+
+#contact-main{
+    display :flex;
+    justify-content: center;
+    flex: 1;
+}
+
+/*home*/
+
+#intro img{
+    width: 200px;
+    border-radius: 50%;
+    max-width: 50%;
+    height: auto;
+    box-shadow: 0 0 10px #819067;
+}
+
+#home-main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#home-main section{
+    width : 70%;
+    border-width: 5px 0px;
+    border-style: double;
+    border-color: #819067;
+    margin: 20px;
+}
+
+#home-main #intro{
+    border-style: none;
+    text-align: center;
+}
+
+#home-main li, #home-main ul, #home-main h1, #home-main h2{
+    color: #0A400C;
+}
+
+/* #home-main h1{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+} */
+
+/*projects*/
+#projects-main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#projects-main section{
+    width : 70%;
+    border-width: 5px 0px;
+    border-style: double;
+    border-color: #819067;
+    margin: 20px;
+}
+
+#projects-main a, #projects-main h1, #projects-main p{
+    color: #0A400C;
+}
+
+#projects-main a{
+    text-decoration: none;
+}
+
+/*skills*/
+#skills-main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#skills-main section{
+    width : 70%;
+    border-width: 5px 0px;
+    border-style: double;
+    border-color: #819067;
+    margin: 20px;
+}
+
+#skills-main li, #skills-main h1{
+    color: #0A400C;
+}
+
+
+/*media query*/
+
+@media (max-width:480px){
+    nav ul {
+        flex-direction: column; 
+    }
+    #contact-form{
+        flex : 0 1 60%;
+    }
+}
+
+@media (max-width:769px){
+    #contact-form{
+        flex : 0 1 50%;
+    }
+}
