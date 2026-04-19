@@ -75,6 +75,15 @@ nav a:hover{
 
 }
 
+#toggleButton{
+    border: none;
+    border-radius: 5px;
+    background-color: #FEFAE0;
+    padding: 7px;
+    margin: 3px;
+    font-size: 25px;
+}
+
 
 
 /*Contact 파일에 적용되는 영역을 다룹니다.*/
@@ -239,6 +248,11 @@ main.nightTheme input[type="submit"]:hover{
     color: #040c42;
     background-color: #fcf6a2;
     box-shadow:0 0 10px #ffd739;
+}
+
+#toggleButton.nightTheme {
+    background-color: #fff574;
+    color: #040c42;
 }
 
 /*media query*/
