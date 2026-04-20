@@ -27,7 +27,8 @@ function init(){
         ftr.classList.add("nightTheme");
     }
 
-    getGithubInfo("https://api.github.com/users/MHJeong730");
+    getProfileInfo("https://api.github.com/users/MHJeong730");
+    getRepoInfo("https://api.github.com/users/MHJeong730/repos");
 }
 
 
@@ -90,7 +91,7 @@ function filterProject(event){
 }
 
 
-async function getGithubInfo(url){
+async function getProfileInfo(url){
     const gitMain = document.querySelector("#myGithub-main");
 
     try{
@@ -111,10 +112,9 @@ async function getGithubInfo(url){
         profileInfo.classList.add("profileData");
 
         profileInfo.innerHTML =`
-            <h1>${name}</h1>
             <img src = "${avatarUrl}" alt = "github Avatar">
+            <h1>${name}</h1>
             <p class = "bio">${bio}</p>
-            <p>Name : ${name}</p>
             <ul>
                 <li>Number of public repository : ${publicRepositoryNum}</li>
                 <li>Followers : ${followers}</li>
@@ -135,7 +135,51 @@ async function getGithubInfo(url){
     }
 }
 
+async function getRepoInfo(url){
+    const gitMain = document.querySelector("#myGithub-main");
 
+    try{
+        const response = await fetch(url); 
+        if (!response.ok) throw new Error("No repo info");
+        
+        const repolist = await response.json();
+
+        repolist.forEach((item, index)=>{
+
+            const repoName = item.name ;
+            const description = item.description ;
+            const pLanguage = item.language ;
+            const starCnt = item.stargazers_count ;
+            const forks = item.forks ;
+            const repoLink = item.html_url ;
+
+            const repoInfo = document.createElement("section");
+            repoInfo.classList.add("repoData");
+
+            repoInfo.innerHTML =`
+                <h1>${repoName}</h1>
+                <p>${description}</p>
+                <a href=${repoLink}>|| Repository Link ||</a>
+                <ul>
+                    <li>Primary Language : ${pLanguage}</li>
+                    <li>Star count : ${starCnt}</li>
+                    <li>Forks : ${forks}</li>
+                </ul>
+            `;
+
+            gitMain.appendChild(repoInfo);
+        });
+
+    }catch(error){
+        const repoInfo = document.createElement("section");
+        repoInfo.classList.add("errorMessage");
+        repoInfo.innerHTML = `
+            <p>Error: ${error.message}</p>
+        `;
+
+        gitMain.appendChild(repoInfo);
+    }
+}
 
 
 

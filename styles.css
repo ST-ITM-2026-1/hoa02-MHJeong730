@@ -235,7 +235,29 @@ input[type="submit"]:hover{
     margin: 20px;
 }
 
+/* my github */
+.profileData img{
+    width: 200px;
+    border-radius: 50%;
+    max-width: 50%;
+    height: auto;
+    margin-top: 20px;
+}
 
+#myGithub-main{    
+    display: flex ;
+    flex-direction: column;
+    align-items: center;
+}
+
+#myGithub-main section{
+
+    width : 70%;
+    border-width: 5px 0px;
+    border-style: double;
+    border-color: #819067;
+    margin: 20px;
+}
 
 
 
