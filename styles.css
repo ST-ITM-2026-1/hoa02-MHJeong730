@@ -196,6 +196,30 @@ input[type="submit"]:hover{
     text-decoration: none;
 }
 
+#filter{
+    display:flex ;
+}
+
+#projects-main #filter{
+    border: none;
+    justify-content: space-evenly;
+}
+
+#projects-main #filter button{
+    padding-left: 30px;
+    padding-right: 30px;
+    font-size: 20px;
+    background-color: #B1AB86;
+    border-radius: 10px;
+    border: none;
+}
+
+#projects-main #filter button.currentSelected{
+    border: 3px solid #0A400C ;
+    box-shadow:0 0 10px #819067;
+}
+
+
 /*skills*/
 #skills-main{
     display: flex;
@@ -255,6 +279,9 @@ main.nightTheme input[type="submit"]:hover{
     color: #040c42;
 }
 
+#projects-main.nightTheme #filter button{
+    background-color: #040c42;
+}
 /*media query*/
 
 @media (max-width:480px){
