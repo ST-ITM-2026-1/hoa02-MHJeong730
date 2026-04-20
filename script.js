@@ -15,7 +15,7 @@ function init(){
     if(localStorage.getItem('theme') === "Night"){
 
         clickedToggle.classList.add("nightTheme");
-        clickedToggle.textContent = "☾" ;
+        clickedToggle.textContent = "☀" ;
         body.classList.add("nightTheme");
         hd.classList.add("nightTheme");
         main.classList.add("nightTheme");
@@ -36,7 +36,7 @@ function changeTheme(event){
         localStorage.setItem('theme', 'Day') ;
 
         clickedToggle.classList.remove("nightTheme");
-        clickedToggle.textContent = "☀" ;
+        clickedToggle.textContent = "☾" ;
         body.classList.remove("nightTheme")
         hd.classList.remove("nightTheme");
         main.classList.remove("nightTheme");
@@ -45,7 +45,7 @@ function changeTheme(event){
         localStorage.setItem('theme', 'Night');
 
         clickedToggle.classList.add("nightTheme");
-        clickedToggle.textContent = "☾" ;
+        clickedToggle.textContent = "☀" 
         body.classList.add("nightTheme");
         hd.classList.add("nightTheme");
         main.classList.add("nightTheme");
