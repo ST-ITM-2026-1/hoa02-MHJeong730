@@ -26,6 +26,8 @@ function init(){
         main.classList.add("nightTheme");
         ftr.classList.add("nightTheme");
     }
+
+    getGithubInfo("https://api.github.com/users/MHJeong730");
 }
 
 
@@ -87,6 +89,51 @@ function filterProject(event){
     clickedButton.classList.add("currentSelected");
 }
 
+
+async function getGithubInfo(url){
+    const gitMain = document.querySelector("#myGithub-main");
+
+    try{
+        const response = await fetch(url); 
+        if (!response.ok) throw new Error("No user info");
+        
+        const data = await response.json();
+
+        const avatarUrl = data.avatar_url;
+        const name = data.name ;
+        const bio = data.bio ;
+        const publicRepositoryNum = data.public_repos
+        const followers = data.followers ;
+        const following = data.following
+
+
+        const profileInfo = document.createElement("section");
+        profileInfo.classList.add("profileData");
+
+        profileInfo.innerHTML =`
+            <h1>${name}</h1>
+            <img src = "${avatarUrl}" alt = "github Avatar">
+            <p class = "bio">${bio}</p>
+            <p>Name : ${name}</p>
+            <ul>
+                <li>Number of public repository : ${publicRepositoryNum}</li>
+                <li>Followers : ${followers}</li>
+                <li>Following : ${following}</li>
+            </ul>
+        `;
+
+        gitMain.appendChild(profileInfo);
+
+    }catch(error){
+        const profileInfo = document.createElement("section");
+        profileInfo.classList.add("errorMessage");
+        profileInfo.innerHTML = `
+            <p>Error: ${error.message}</p>
+        `;
+
+        gitMain.appendChild(profileInfo);
+    }
+}
 
 
 
