@@ -5,6 +5,11 @@ function init(){
     let toggle = document.querySelector("#toggleButton");
     toggle.addEventListener("click",changeTheme);
 
+    let filterButtons = document.querySelectorAll("#filter button") ;
+    filterButtons.forEach( button =>{
+        button.addEventListener("click",filterProject);
+    });
+
 
     const clickedToggle = document.querySelector("#toggleButton");
     const body = document.querySelector("body")
@@ -52,6 +57,34 @@ function changeTheme(event){
         ftr.classList.add("nightTheme");
     }
 
+}
+
+function filterProject(event){
+    const clickedButton = event.currentTarget ;
+    const filterButtons = document.querySelectorAll("#filter button") ;
+    const filter = clickedButton.textContent;
+    const projects = document.querySelectorAll("#projects-main section:not(#filter)");
+
+    filterButtons.forEach( button =>{
+        button.classList.remove("currentSelected");
+    });
+
+    if(filter == 'All'){
+        projects.forEach(project =>{
+            project.style.display = '';
+        });
+    }else{
+        projects.forEach(project =>{
+            if(!project.classList.contains(filter)){
+             project.style.display = 'none';
+            }else{
+                project.style.display = '';
+            }
+    });
+    }
+
+
+    clickedButton.classList.add("currentSelected");
 }
 
 
